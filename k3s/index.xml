@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>k3s on wiki.tychsen</title>
+    <link>/k3s/</link>
+    <description>Recent content in k3s on wiki.tychsen</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/k3s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup</title>
+      <link>/k3s/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/k3s/setup/</guid>
+      <description>Download here: https://k3s.io
+Parameters can be written in a config file located at /etc/rancher/k3s/config.yaml.
+First master     Make a config file located at /etc/rancher/k3s/config.yaml, with the following content:
+cluster-init:truetoken:&amp;lt;some random string&amp;gt;Additional master nodes     Make a config file located at /etc/rancher/k3s/config.yaml with the following content:
+server:https://94.130.182.175:6443token:&amp;lt;same random string as above&amp;gt;Worker nodes     Run script with K3S_URL and K3S_TOKEN parameters set.
+curl -fsL https://get.</description>
+    </item>
+    
+    <item>
+      <title>Load balancing</title>
+      <link>/k3s/load-balancing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/k3s/load-balancing/</guid>
+      <description>Table of contents    Middleware  Relevant documentation   TLS  Cert-manager Ingress configuration        Load balancing is by default using Traefik.
+Traefik has two modes for Kubernetes (both of which are enabled in k3s): CRD (Custom Resource Definition) and using k8s default Ingress spec.
+Middleware     Many things in Traefik is done using middleware, and it seems middleware can only be specified using the CRD mode.</description>
+    </item>
+    
+    <item>
+      <title>Full example</title>
+      <link>/k3s/full-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/k3s/full-example/</guid>
+      <description>Full example     apiVersion:apps/v1kind:Deploymentmetadata:name:nginxlabels:app:nginxspec:replicas:3minReadySeconds:10selector:matchLabels:app:nginxtemplate:metadata:labels:app:nginxspec:containers:- name:nginximage:nginx:1.14.2ports:- containerPort:80---apiVersion:v1kind:Servicemetadata:name:nginxspec:selector:app:nginxports:- protocol:TCPport:80---apiVersion:networking.k8s.io/v1kind:Ingressmetadata:name:nginxannotations:cert-manager.io/cluster-issuer:letsencrypt-prodkubernetes.io/ingress.allow-http:&amp;#34;false&amp;#34;traefik.ingress.kubernetes.io/router.middlewares:default-redirect-http@kubernetescrdspec:ingressClassName:traefik-lbtls:- secretName:nginx-tlshosts:- nginx.tychsen.merules:- host:nginx.tychsen.mehttp:paths:- path:/pathType:Prefixbackend:service:name:nginxport:number:80---apiVersion:traefik.containo.us/v1alpha1kind:Middlewaremetadata:name:nginx-stripprefixspec:stripPrefix:prefixes:- /nginx---# Redirect to httpsapiVersion:traefik.containo.us/v1alpha1kind:Middlewaremetadata:name:redirect-httpspec:redirectScheme:scheme:httpspermanent:true---apiVersion:networking.k8s.io/v1kind:Ingressmetadata:name:nginx2annotations:traefik.ingress.kubernetes.io/router.middlewares:default-nginx-stripprefix@kubernetescrdspec:ingressClassName:traefik-lbrules:- http:paths:- path:/nginxpathType:Prefixbackend:service:name:nginxport:number:80---apiVersion:policy/v1kind:PodDisruptionBudgetmetadata:name:nginxspec:minAvailable:1selector:matchLabels:app:nginx</description>
+    </item>
+    
+  </channel>
+</rss>
