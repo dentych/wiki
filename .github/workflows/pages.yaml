@@ -1,0 +1,52 @@
+name: Build and deploy Hugo to Github Pages
+on:
+  push:
+    branches-ignore:
+      - pages
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Hugo
+        run: |
+          cd /usr/local/bin
+          sudo curl -LO https://github.com/gohugoio/hugo/releases/download/v0.95.0/hugo_0.95.0_Linux-64bit.tar.gz
+          sudo tar xvf hugo_0.95.0_Linux-64bit.tar.gz
+      - uses: actions/checkout@v3
+      - name: Build with Hugo
+        run: hugo
+      - uses: actions/upload-artifact@v3
+        with:
+          name: public
+          path: public/
+  deploy:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: pages
+      - name: Show structure before downloaded artifacts
+        run: ls -laR
+      - uses: actions/download-artifact@v3
+        with:
+          name: public
+      - name: Show file structure
+        run: ls -laR
+      - name: Check if there are changes to Hugo files
+        id: status
+        run: |
+          git status
+          echo "::set-output name=gitstatus::$(git status -s)"
+      - name: Setup git
+        if: ${{ steps.status.outputs.gitstatus != '' }}
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+      - name: Commit things
+        if: ${{ steps.status.outputs.gitstatus != '' }}
+        run: |
+          git add .
+          git commit -m "Update Hugo deployment"
+          git push
