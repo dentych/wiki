@@ -8,14 +8,10 @@
 <meta name="generator" content="Hugo 0.95.0" />
 
 
-  <meta name="description" content="Download here: https://k3s.io
-Parameters can be written in a config file located at /etc/rancher/k3s/config.yaml.
-First master     Make a config file located at /etc/rancher/k3s/config.yaml, with the following content:
-cluster-init:truetoken:&lt;some random string&gt;Additional master nodes     Make a config file located at /etc/rancher/k3s/config.yaml with the following content:
-server:https://94.130.182.175:6443token:&lt;same random string as above&gt;Worker nodes     Run script with K3S_URL and K3S_TOKEN parameters set.
-curl -fsL https://get." />
+  <meta name="description" content="The range problem:
+package main import &#34;fmt&#34; type Person struct { Name *string } func main() { people := []Person{ {Name: ptr(&#34;Jan&#34;)}, {Name: ptr(&#34;Waddahell&#34;)}, {Name: ptr(&#34;Mie&#34;)}, } var otherPeople []*Person for _, v := range people { otherPeople = append(otherPeople, &amp;v) } for _, v := range otherPeople { fmt.Println(*v.Name) } } func ptr(str string) *string { return &amp;str } " />
 
-    <title>Setup | wiki.tychsen</title>
+    <title>Go | wiki.tychsen</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -36,46 +32,38 @@ curl -fsL https://get." />
     
   <meta
     property="og:title"
-    content="Setup"
+    content="Go"
   />
   <meta property="og:site_name" content="wiki.tychsen" />
-  <meta property="og:description" content="Download here: https://k3s.io
-Parameters can be written in a config file located at /etc/rancher/k3s/config.yaml.
-First master     Make a config file located at /etc/rancher/k3s/config.yaml, with the following content:
-cluster-init:truetoken:&lt;some random string&gt;Additional master nodes     Make a config file located at /etc/rancher/k3s/config.yaml with the following content:
-server:https://94.130.182.175:6443token:&lt;same random string as above&gt;Worker nodes     Run script with K3S_URL and K3S_TOKEN parameters set.
-curl -fsL https://get." />
+  <meta property="og:description" content="The range problem:
+package main import &#34;fmt&#34; type Person struct { Name *string } func main() { people := []Person{ {Name: ptr(&#34;Jan&#34;)}, {Name: ptr(&#34;Waddahell&#34;)}, {Name: ptr(&#34;Mie&#34;)}, } var otherPeople []*Person for _, v := range people { otherPeople = append(otherPeople, &amp;v) } for _, v := range otherPeople { fmt.Println(*v.Name) } } func ptr(str string) *string { return &amp;str } " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/k3s/setup/" />
+<meta property="og:url" content="/go/" />
 
-<meta property="article:section" content="K3s" />
+<meta property="article:section" content="Go" />
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Setup" />
-  <meta name="twitter:description" content="Download here: https://k3s.io
-Parameters can be written in a config file located at /etc/rancher/k3s/config.yaml.
-First master     Make a config file located at /etc/rancher/k3s/config.yaml, with the following content:
-cluster-init:truetoken:&lt;some random string&gt;Additional master nodes     Make a config file located at /etc/rancher/k3s/config.yaml with the following content:
-server:https://94.130.182.175:6443token:&lt;same random string as above&gt;Worker nodes     Run script with K3S_URL and K3S_TOKEN parameters set.
-curl -fsL https://get." />
+<meta name="twitter:title" content="Go" />
+  <meta name="twitter:description" content="The range problem:
+package main import &#34;fmt&#34; type Person struct { Name *string } func main() { people := []Person{ {Name: ptr(&#34;Jan&#34;)}, {Name: ptr(&#34;Waddahell&#34;)}, {Name: ptr(&#34;Mie&#34;)}, } var otherPeople []*Person for _, v := range people { otherPeople = append(otherPeople, &amp;v) } for _, v := range otherPeople { fmt.Println(*v.Name) } } func ptr(str string) *string { return &amp;str } " />
 
 
   <script type="application/ld+json">
   {
       "@context": "http://schema.org",
       "@type": "TechArticle",
-      "articleSection": "K3s",
-      "name": "Setup",
-      "url" : "/k3s/setup/",
-      "headline": "Setup",
-      "description": "Download here: https:\/\/k3s.io\nParameters can be written in a config file located at \/etc\/rancher\/k3s\/config.yaml.\nFirst master     Make a config file located at \/etc\/rancher\/k3s\/config.yaml, with the following content:\ncluster-init:truetoken:\u003csome random string\u003eAdditional master nodes     Make a config file located at \/etc\/rancher\/k3s\/config.yaml with the following content:\nserver:https:\/\/94.130.182.175:6443token:\u003csame random string as above\u003eWorker nodes     Run script with K3S_URL and K3S_TOKEN parameters set.\ncurl -fsL https:\/\/get.",
-      "wordCount" : "70",
+      "articleSection": "Go",
+      "name": "Go",
+      "url" : "/go/",
+      "headline": "Go",
+      "description": "The range problem:\npackage main import \u0022fmt\u0022 type Person struct { Name *string } func main() { people := []Person{ {Name: ptr(\u0022Jan\u0022)}, {Name: ptr(\u0022Waddahell\u0022)}, {Name: ptr(\u0022Mie\u0022)}, } var otherPeople []*Person for _, v := range people { otherPeople = append(otherPeople, \u0026v) } for _, v := range otherPeople { fmt.Println(*v.Name) } } func ptr(str string) *string { return \u0026str } ",
+      "wordCount" : "60",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "/k3s/setup/"
+          "@id": "/go/"
       },
       "copyrightHolder" : "wiki.tychsen",
       "copyrightYear" : "0001",
@@ -157,7 +145,7 @@ curl -fsL https://get." />
   href="/custom.css"
   media="all"
 />
-  <link href="/k3s/setup/" rel="canonical" type="text/html" />
+  <link href="/go/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -410,7 +398,7 @@ curl -fsL https://get." />
                 <span class="flex">
                   <a
                     href="/k3s/setup/"
-                    class="gdoc-nav__entry is-active"
+                    class="gdoc-nav__entry"
                   >
                     Setup
                   </a>
@@ -552,7 +540,7 @@ curl -fsL https://get." />
                 <span class="flex">
                   <a
                     href="/go/"
-                    class="gdoc-nav__entry"
+                    class="gdoc-nav__entry is-active"
                   >
                     Go
                   </a>
@@ -625,15 +613,7 @@ curl -fsL https://get." />
     
   
   
-    
-    
-    
-    
-  
-  
-    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>wiki.tychsen</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/k3s/' href='/k3s/'><span itemprop='name'>k3s</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Setup</span><meta itemprop='position' content='3' /></li>
-  
-
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>wiki.tychsen</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Go</span><meta itemprop='position' content='2' /></li>
   
 
   
@@ -649,45 +629,36 @@ curl -fsL https://get." />
   <article
     class="gdoc-markdown gdoc-markdown__align--left"
   >
-    <h1>Setup</h1>
-    <p>Download here: <a
-  class="gdoc-markdown__link"
-  href="https://k3s.io"
-  
->https://k3s.io</a></p>
-<p>Parameters can be written in a config file located at <code>/etc/rancher/k3s/config.yaml</code>.</p>
-<div class="gdoc-page__anchorwrap">
-    <h2 id="first-master">
-        First master
-        <a data-clipboard-text="/k3s/setup/#first-master" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: First master" aria-label="Anchor to: First master" href="#first-master">
-            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
-        </a>
-    </h2>
-</div>
-<p>Make a config file located at <code>/etc/rancher/k3s/config.yaml</code>, with the following content:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">cluster-init</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;some random string&gt;</span><span class="w">
-</span></span></span></code></pre></div><div class="gdoc-page__anchorwrap">
-    <h2 id="additional-master-nodes">
-        Additional master nodes
-        <a data-clipboard-text="/k3s/setup/#additional-master-nodes" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Additional master nodes" aria-label="Anchor to: Additional master nodes" href="#additional-master-nodes">
-            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
-        </a>
-    </h2>
-</div>
-<p>Make a config file located at <code>/etc/rancher/k3s/config.yaml</code> with the following content:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l">https://94.130.182.175:6443</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;same random string as above&gt;</span><span class="w">
-</span></span></span></code></pre></div><div class="gdoc-page__anchorwrap">
-    <h2 id="worker-nodes">
-        Worker nodes
-        <a data-clipboard-text="/k3s/setup/#worker-nodes" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Worker nodes" aria-label="Anchor to: Worker nodes" href="#worker-nodes">
-            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
-        </a>
-    </h2>
-</div>
-<p>Run script with <code>K3S_URL</code> and <code>K3S_TOKEN</code> parameters set.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl -fsL https://get.k3s.io <span class="p">|</span> <span class="nv">K3S_URL</span><span class="o">=</span>https://tychsen.me:6443 <span class="nv">K3S_TOKEN</span><span class="o">=</span>&lt;same random string as first master&gt; sh -
+    <h1>Go</h1>
+    <p>The range problem:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Person</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Name</span> <span class="o">*</span><span class="kt">string</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">people</span> <span class="o">:=</span> <span class="p">[]</span><span class="nx">Person</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="nf">ptr</span><span class="p">(</span><span class="s">&#34;Jan&#34;</span><span class="p">)},</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="nf">ptr</span><span class="p">(</span><span class="s">&#34;Waddahell&#34;</span><span class="p">)},</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="nf">ptr</span><span class="p">(</span><span class="s">&#34;Mie&#34;</span><span class="p">)},</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">otherPeople</span> <span class="p">[]</span><span class="o">*</span><span class="nx">Person</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">people</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">otherPeople</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">otherPeople</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">otherPeople</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="o">*</span><span class="nx">v</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">ptr</span><span class="p">(</span><span class="nx">str</span> <span class="kt">string</span><span class="p">)</span> <span class="o">*</span><span class="kt">string</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">str</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
   </article>
 
