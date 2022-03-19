@@ -3,7 +3,9 @@ title: Go
 weight: 4
 ---
 
-The range problem:
+### Range problem
+If you range over a slice and append to another slice, sometimes all the values are equal.
+This is an example of how to make that problem appear.
 
 ```go
 package main
