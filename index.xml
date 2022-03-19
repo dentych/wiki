@@ -39,5 +39,15 @@ Middleware     Many things in Traefik is done using middleware, and it seems mid
       <description>Full example     apiVersion:apps/v1kind:Deploymentmetadata:name:nginxlabels:app:nginxspec:replicas:3minReadySeconds:10selector:matchLabels:app:nginxtemplate:metadata:labels:app:nginxspec:containers:- name:nginximage:nginx:1.14.2ports:- containerPort:80---apiVersion:v1kind:Servicemetadata:name:nginxspec:selector:app:nginxports:- protocol:TCPport:80---apiVersion:networking.k8s.io/v1kind:Ingressmetadata:name:nginxannotations:cert-manager.io/cluster-issuer:letsencrypt-prodkubernetes.io/ingress.allow-http:&amp;#34;false&amp;#34;traefik.ingress.kubernetes.io/router.middlewares:default-redirect-http@kubernetescrdspec:ingressClassName:traefik-lbtls:- secretName:nginx-tlshosts:- nginx.tychsen.merules:- host:nginx.tychsen.mehttp:paths:- path:/pathType:Prefixbackend:service:name:nginxport:number:80---apiVersion:traefik.containo.us/v1alpha1kind:Middlewaremetadata:name:nginx-stripprefixspec:stripPrefix:prefixes:- /nginx---# Redirect to httpsapiVersion:traefik.containo.us/v1alpha1kind:Middlewaremetadata:name:redirect-httpspec:redirectScheme:scheme:httpspermanent:true---apiVersion:networking.k8s.io/v1kind:Ingressmetadata:name:nginx2annotations:traefik.ingress.kubernetes.io/router.middlewares:default-nginx-stripprefix@kubernetescrdspec:ingressClassName:traefik-lbrules:- http:paths:- path:/nginxpathType:Prefixbackend:service:name:nginxport:number:80---apiVersion:policy/v1kind:PodDisruptionBudgetmetadata:name:nginxspec:minAvailable:1selector:matchLabels:app:nginx</description>
     </item>
     
+    <item>
+      <title>Interesting tech</title>
+      <link>/interesting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/interesting/</guid>
+      <description>List of interesting things:
+Tech      Dokku: Open source Heroku  </description>
+    </item>
+    
   </channel>
 </rss>
