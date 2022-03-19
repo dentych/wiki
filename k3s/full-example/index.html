@@ -10,7 +10,7 @@
 
   <meta name="description" content="Full example     apiVersion:apps/v1kind:Deploymentmetadata:name:nginxlabels:app:nginxspec:replicas:3minReadySeconds:10selector:matchLabels:app:nginxtemplate:metadata:labels:app:nginxspec:containers:- name:nginximage:nginx:1.14.2ports:- containerPort:80---apiVersion:v1kind:Servicemetadata:name:nginxspec:selector:app:nginxports:- protocol:TCPport:80---apiVersion:networking.k8s.io/v1kind:Ingressmetadata:name:nginxannotations:cert-manager.io/cluster-issuer:letsencrypt-prodkubernetes.io/ingress.allow-http:&#34;false&#34;traefik.ingress.kubernetes.io/router.middlewares:default-redirect-http@kubernetescrdspec:ingressClassName:traefik-lbtls:- secretName:nginx-tlshosts:- nginx.tychsen.merules:- host:nginx.tychsen.mehttp:paths:- path:/pathType:Prefixbackend:service:name:nginxport:number:80---apiVersion:traefik.containo.us/v1alpha1kind:Middlewaremetadata:name:nginx-stripprefixspec:stripPrefix:prefixes:- /nginx---# Redirect to httpsapiVersion:traefik.containo.us/v1alpha1kind:Middlewaremetadata:name:redirect-httpspec:redirectScheme:scheme:httpspermanent:true---apiVersion:networking.k8s.io/v1kind:Ingressmetadata:name:nginx2annotations:traefik.ingress.kubernetes.io/router.middlewares:default-nginx-stripprefix@kubernetescrdspec:ingressClassName:traefik-lbrules:- http:paths:- path:/nginxpathType:Prefixbackend:service:name:nginxport:number:80---apiVersion:policy/v1kind:PodDisruptionBudgetmetadata:name:nginxspec:minAvailable:1selector:matchLabels:app:nginx" />
 
-    <title>Full example | wiki.tychsen</title>
+    <title>Full example | Tychsen Wiki</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -33,7 +33,7 @@
     property="og:title"
     content="Full example"
   />
-  <meta property="og:site_name" content="wiki.tychsen" />
+  <meta property="og:site_name" content="Tychsen Wiki" />
   <meta property="og:description" content="Full example     apiVersion:apps/v1kind:Deploymentmetadata:name:nginxlabels:app:nginxspec:replicas:3minReadySeconds:10selector:matchLabels:app:nginxtemplate:metadata:labels:app:nginxspec:containers:- name:nginximage:nginx:1.14.2ports:- containerPort:80---apiVersion:v1kind:Servicemetadata:name:nginxspec:selector:app:nginxports:- protocol:TCPport:80---apiVersion:networking.k8s.io/v1kind:Ingressmetadata:name:nginxannotations:cert-manager.io/cluster-issuer:letsencrypt-prodkubernetes.io/ingress.allow-http:&#34;false&#34;traefik.ingress.kubernetes.io/router.middlewares:default-redirect-http@kubernetescrdspec:ingressClassName:traefik-lbtls:- secretName:nginx-tlshosts:- nginx.tychsen.merules:- host:nginx.tychsen.mehttp:paths:- path:/pathType:Prefixbackend:service:name:nginxport:number:80---apiVersion:traefik.containo.us/v1alpha1kind:Middlewaremetadata:name:nginx-stripprefixspec:stripPrefix:prefixes:- /nginx---# Redirect to httpsapiVersion:traefik.containo.us/v1alpha1kind:Middlewaremetadata:name:redirect-httpspec:redirectScheme:scheme:httpspermanent:true---apiVersion:networking.k8s.io/v1kind:Ingressmetadata:name:nginx2annotations:traefik.ingress.kubernetes.io/router.middlewares:default-nginx-stripprefix@kubernetescrdspec:ingressClassName:traefik-lbrules:- http:paths:- path:/nginxpathType:Prefixbackend:service:name:nginxport:number:80---apiVersion:policy/v1kind:PodDisruptionBudgetmetadata:name:nginxspec:minAvailable:1selector:matchLabels:app:nginx" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/k3s/full-example/" />
@@ -62,14 +62,14 @@
           "@type": "WebPage",
           "@id": "/k3s/full-example/"
       },
-      "copyrightHolder" : "wiki.tychsen",
+      "copyrightHolder" : "Tychsen Wiki",
       "copyrightYear" : "0001",
       "dateCreated": "0001-01-01T00:00:00.00Z",
       "datePublished": "0001-01-01T00:00:00.00Z",
       "dateModified": "0001-01-01T00:00:00.00Z",
       "publisher":{
           "@type":"Organization",
-          "name": "wiki.tychsen",
+          "name": "Tychsen Wiki",
           "url": "/",
           "logo": {
               "@type": "ImageObject",
@@ -186,7 +186,7 @@
             src="/brand.svg"
             alt=""
           />
-          <span class="gdoc-brand__title">wiki.tychsen</span>
+          <span class="gdoc-brand__title">Tychsen Wiki</span>
         </span>
       </a>
     </div>

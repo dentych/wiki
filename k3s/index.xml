@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>k3s on wiki.tychsen</title>
+    <title>k3s on Tychsen Wiki</title>
     <link>/k3s/</link>
-    <description>Recent content in k3s on wiki.tychsen</description>
+    <description>Recent content in k3s on Tychsen Wiki</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="/k3s/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup</title>
