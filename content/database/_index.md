@@ -2,7 +2,7 @@
 title: Database setup
 ---
 
-Hosted at Hetzner ({{<newtablink "https://console.hetzner.cloud" login>}})
+Hosted at Hetzner ({{<newtablink login "https://console.hetzner.cloud">}})
 
 Docker-compose for the setup:
 ```yaml

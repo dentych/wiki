@@ -9,7 +9,7 @@ weight: 2
 Load balancing is by default using Traefik.
 
 Traefik has two modes for Kubernetes (both of which are enabled in k3s): CRD (Custom Resource Definition) and using k8s
-default {{<newtablink "https://kubernetes.io/docs/concepts/services-networking/ingress/" "Ingress spec">}}.
+default {{<newtablink "Ingress spec" "https://kubernetes.io/docs/concepts/services-networking/ingress/">}}.
 
 ## Middleware
 
