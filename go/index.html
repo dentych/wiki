@@ -8,8 +8,8 @@
 <meta name="generator" content="Hugo 0.95.0" />
 
 
-  <meta name="description" content="The range problem:
-package main import &#34;fmt&#34; type Person struct { Name *string } func main() { people := []Person{ {Name: ptr(&#34;Jan&#34;)}, {Name: ptr(&#34;Waddahell&#34;)}, {Name: ptr(&#34;Mie&#34;)}, } var otherPeople []*Person for _, v := range people { otherPeople = append(otherPeople, &amp;v) } for _, v := range otherPeople { fmt.Println(*v.Name) } } func ptr(str string) *string { return &amp;str } " />
+  <meta name="description" content="Range problem     If you range over a slice and append to another slice, sometimes all the values are equal. This is an example of how to make that problem appear.
+package main import &#34;fmt&#34; type Person struct { Name *string } func main() { people := []Person{ {Name: ptr(&#34;Jan&#34;)}, {Name: ptr(&#34;Waddahell&#34;)}, {Name: ptr(&#34;Mie&#34;)}, } var otherPeople []*Person for _, v := range people { otherPeople = append(otherPeople, &amp;v) } for _, v := range otherPeople { fmt." />
 
     <title>Go | wiki.tychsen</title>
 
@@ -35,8 +35,8 @@ package main import &#34;fmt&#34; type Person struct { Name *string } func main(
     content="Go"
   />
   <meta property="og:site_name" content="wiki.tychsen" />
-  <meta property="og:description" content="The range problem:
-package main import &#34;fmt&#34; type Person struct { Name *string } func main() { people := []Person{ {Name: ptr(&#34;Jan&#34;)}, {Name: ptr(&#34;Waddahell&#34;)}, {Name: ptr(&#34;Mie&#34;)}, } var otherPeople []*Person for _, v := range people { otherPeople = append(otherPeople, &amp;v) } for _, v := range otherPeople { fmt.Println(*v.Name) } } func ptr(str string) *string { return &amp;str } " />
+  <meta property="og:description" content="Range problem     If you range over a slice and append to another slice, sometimes all the values are equal. This is an example of how to make that problem appear.
+package main import &#34;fmt&#34; type Person struct { Name *string } func main() { people := []Person{ {Name: ptr(&#34;Jan&#34;)}, {Name: ptr(&#34;Waddahell&#34;)}, {Name: ptr(&#34;Mie&#34;)}, } var otherPeople []*Person for _, v := range people { otherPeople = append(otherPeople, &amp;v) } for _, v := range otherPeople { fmt." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/go/" />
 
@@ -45,8 +45,8 @@ package main import &#34;fmt&#34; type Person struct { Name *string } func main(
 
   <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Go" />
-  <meta name="twitter:description" content="The range problem:
-package main import &#34;fmt&#34; type Person struct { Name *string } func main() { people := []Person{ {Name: ptr(&#34;Jan&#34;)}, {Name: ptr(&#34;Waddahell&#34;)}, {Name: ptr(&#34;Mie&#34;)}, } var otherPeople []*Person for _, v := range people { otherPeople = append(otherPeople, &amp;v) } for _, v := range otherPeople { fmt.Println(*v.Name) } } func ptr(str string) *string { return &amp;str } " />
+  <meta name="twitter:description" content="Range problem     If you range over a slice and append to another slice, sometimes all the values are equal. This is an example of how to make that problem appear.
+package main import &#34;fmt&#34; type Person struct { Name *string } func main() { people := []Person{ {Name: ptr(&#34;Jan&#34;)}, {Name: ptr(&#34;Waddahell&#34;)}, {Name: ptr(&#34;Mie&#34;)}, } var otherPeople []*Person for _, v := range people { otherPeople = append(otherPeople, &amp;v) } for _, v := range otherPeople { fmt." />
 
 
   <script type="application/ld+json">
@@ -57,8 +57,8 @@ package main import &#34;fmt&#34; type Person struct { Name *string } func main(
       "name": "Go",
       "url" : "/go/",
       "headline": "Go",
-      "description": "The range problem:\npackage main import \u0022fmt\u0022 type Person struct { Name *string } func main() { people := []Person{ {Name: ptr(\u0022Jan\u0022)}, {Name: ptr(\u0022Waddahell\u0022)}, {Name: ptr(\u0022Mie\u0022)}, } var otherPeople []*Person for _, v := range people { otherPeople = append(otherPeople, \u0026v) } for _, v := range otherPeople { fmt.Println(*v.Name) } } func ptr(str string) *string { return \u0026str } ",
-      "wordCount" : "60",
+      "description": "Range problem     If you range over a slice and append to another slice, sometimes all the values are equal. This is an example of how to make that problem appear.\npackage main import \u0022fmt\u0022 type Person struct { Name *string } func main() { people := []Person{ {Name: ptr(\u0022Jan\u0022)}, {Name: ptr(\u0022Waddahell\u0022)}, {Name: ptr(\u0022Mie\u0022)}, } var otherPeople []*Person for _, v := range people { otherPeople = append(otherPeople, \u0026v) } for _, v := range otherPeople { fmt.",
+      "wordCount" : "87",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -630,7 +630,16 @@ package main import &#34;fmt&#34; type Person struct { Name *string } func main(
     class="gdoc-markdown gdoc-markdown__align--left"
   >
     <h1>Go</h1>
-    <p>The range problem:</p>
+    <div class="gdoc-page__anchorwrap">
+    <h3 id="range-problem">
+        Range problem
+        <a data-clipboard-text="/go/#range-problem" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Range problem" aria-label="Anchor to: Range problem" href="#range-problem">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div>
+<p>If you range over a slice and append to another slice, sometimes all the values are equal.
+This is an example of how to make that problem appear.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
