@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "wiki.tychsen"
+title = "Tychsen Wiki"
 theme = "hugo-geekdoc"
 
 pluralizeListTitles = false
